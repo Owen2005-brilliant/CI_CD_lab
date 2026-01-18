@@ -49,4 +49,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/owen2005-brilliant/ci-cd-practice:latest
+          # |表示YAML后面会跟多行文本
+          # { github.sha }代表当前次Commit的完整哈希值
+          tags: |
+            ghcr.io/owen2005-brilliant/ci-cd-practice:latest
+            ghcr.io/owen2005-brilliant/ci-cd-practice:${{ github.sha }}
